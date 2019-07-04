@@ -1,8 +1,8 @@
 <div class="box">
     <div class="contador">
-        <button class="btn-cont" (click)="menosUm()">-</button>
-        <p class="num-cont">{{ cont }}</p>
-        <button class="btn-cont" (click)="maisUm()">+</button>
+        <button id="diminuir" class="btn-cont" (click)="menosUm()">-</button>
+        <p class="num-cont" id="counter">{{ cont }}</p>
+        <button id="aumentar" class="btn-cont" (click)="maisUm()">+</button>
     </div>
     <div class="resposta">
         <p [ngClass]="{ certa: cont < 5 }">Número menor que 5</p>

@@ -5,6 +5,7 @@ import { ContadorComponent } from './contador.component';
 describe('ContadorComponent', () => {
   let component: ContadorComponent;
   let fixture: ComponentFixture<ContadorComponent>;
+  let element;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -16,10 +17,16 @@ describe('ContadorComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ContadorComponent);
     component = fixture.componentInstance;
+    element = fixture.debugElement.nativeElement;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('Clicar no botão aumentar duas vezes exibe 2', () => {
+    component.maisUm();
+    component.maisUm();
+
+    fixture.detectChanges();
+
+    expect(element.querySelector('#counter').textContent).toBe('2');
   });
 });

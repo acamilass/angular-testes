@@ -8,9 +8,15 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('deve ficar 6 ao clicar duas vezes em aumentar', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('Welcome to aula3-testes!');
+    page.getAumentarBtn().click();
+    page.getAumentarBtn().click();
+    page.getAumentarBtn().click();
+    page.getAumentarBtn().click();
+    page.getAumentarBtn().click();
+    page.getAumentarBtn().click();
+    expect(page.getCounterText()).toBe('6');
   });
 
   afterEach(async () => {

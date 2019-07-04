@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ContadorComponent } from './contador/contador.component';
+import { BoolPipe } from './bool.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ContadorComponent
+    ContadorComponent,
+    BoolPipe
   ],
   imports: [
     BrowserModule
